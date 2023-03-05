@@ -10,12 +10,13 @@ $breakpoint480: 479.98 + px;
 
 // Burger Menu
 $burgerBreakpoint: $breakpoint992;
-$burgerColor: 'black';
+$burgerColor: 'white';
 $burgerActiveColor: 'white';
 
 // Colors
-$primary: '#001731';
-$secondary: '#398BFF';
+$primary: #001731;
+$secondary: #398BFF;
+$secondaryHover: #2575e4;
 
 // Fonts
 $fontMain: 'Open Sans', sans-serif;

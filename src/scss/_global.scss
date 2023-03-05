@@ -37,17 +37,30 @@ body {
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
-    line-height: 22px;
     letter-spacing: 0.01em;
 
     &__primary {
         color: #fff;
-        background-color: $primary;
+        background-color: $secondary;
         border-radius: 4px;
         border: 3px solid rgba(44, 130, 253, 0.2);
+        &:hover{
+            background: $secondaryHover;
+            transition: .3s ease;
+        }
     }
 
-    &__secondary {}
+    &__secondary {
+        background: rgba(44, 130, 253, 0.15);
+        border-radius: 4px;
+        color: $secondary;
+        border: 3px solid transparent;
+        &:hover{
+            background: $secondaryHover;
+            color:#fff;
+            transition: .3s ease;
+        }
+    }
 }
 
 // Animations

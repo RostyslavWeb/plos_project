@@ -1,10 +1,13 @@
-// Header
-// Header
+// Header wrapper
+.header__wrapper {
+    height: 100vh;
+    width: 100%;
+    background: $primary;
+}
 
 // Navbar
 nav {
-    background-color: rgba(0, 119, 134, 0.651);
-    overflow: hidden;
+    // background-color: #444;
 }
 
 .navbar {
@@ -16,14 +19,13 @@ nav {
 
 .logo {
     a {
-        // color: white;
+        margin-right: 24px;
     }
 }
 
 .menu {
     display: flex;
     gap: 24px;
-    margin-left: 24px;
 
     // .menu__item
     &__item {}
@@ -37,6 +39,11 @@ nav {
         letter-spacing: 0.02em;
         color: #FFFFFF;
         opacity: 0.8;
+
+        &:hover {
+            opacity: 1;
+            transition: .3s ease;
+        }
     }
 }
 
@@ -44,6 +51,39 @@ nav {
     &__controlls {
         display: flex;
         margin-left: auto;
+        align-items: center;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 8px;
+        @media (max-width: $breakpoint768){
+            display: none;
+
+            &.active{
+                display: flex;
+                position: absolute;
+                z-index: 11;
+                right: 24px;
+                left: 24px;
+                bottom: 24px;
+
+                .nav__btn{
+                    background: $primary;
+                    border: 3px solid $primary;
+                    color: #fff;
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        font-size: 13px;
+        line-height: 16px;
+        padding: 8px 12px;
     }
 }
 
@@ -53,12 +93,12 @@ nav {
 }
 
 // Burger menu styles
-@media screen and (max-width: $burgerBreakpoint) {
+@media screen and (max-width: $breakpoint768) {
 
     // .menu
     .menu {
         position: fixed;
-        background: #131418;
+        background: $secondaryHover;
         left: 0;
         top: 0;
         height: 100vh;
@@ -75,7 +115,7 @@ nav {
             pointer-events: all;
             justify-content: center;
             align-items: center;
-            z-index: 22;
+            z-index: 2;
             animation: fade 0.1s linear;
         }
     }
@@ -146,6 +186,112 @@ nav {
 
     // .menu__link
     .menu__item-link {
-        color: white;
+        font-size: 20px;
+    }
+}
+
+// Select
+
+$height: 46px;
+
+.select {
+    display: flex;
+    width: 42px;
+    position: relative;
+    z-index: 1;
+    @media (max-width: $breakpoint768){
+        margin-right: 25px;
+    }
+
+    &__backdrop {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: transparent;
+        z-index: -1;
+        display: none;
+    }
+
+    &.open {
+        .select__dropdown {
+            display: block
+        }
+
+        .select__input {
+            border-bottom: none
+        }
+
+        .select__backdrop {
+            display: block
+        }
+    }
+
+    &__input {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        color: #FBFCFF;
+
+        .select__arrow {
+            pointer-events: none;
+
+            &.open {
+                transform: rotate(180deg);
+            }
+
+            // width: 15px;
+        }
+
+        span {
+            pointer-events: none;
+        }
+    }
+
+    &__dropdown {
+        display: none;
+        position: absolute;
+        border-radius: 3px;
+        left: -4px;
+        right: 4px;
+        top: 20px;
+        max-height: 200px;
+        box-shadow: 2px 3px 5px rgba(0, 0, 0, .3);
+        background: $primary;
+        font-size: 16px;
+
+        .select__list {
+            .select__item {
+                cursor: pointer;
+                text-align: center;
+                color: #fff;
+                font-weight: 600;
+                padding: 10px 3px;
+
+                &:first-child{
+                    border-top-left-radius: 3px;
+                    border-top-right-radius: 3px;
+                }
+                &:last-child{
+                    border-bottom-left-radius: 3px;
+                    border-bottom-right-radius: 3px;
+                }
+
+                &.selected {
+                    background-color: $secondaryHover;
+                }
+
+                &:hover {
+                    background-color: $secondaryHover;
+                    transition: .15 background-color ease-in;
+                }
+            }
+        }
     }
 }
