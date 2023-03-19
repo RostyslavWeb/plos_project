@@ -1,4 +1,194 @@
 // Footer
 footer {
-    display: block;
+    background: $primary;
+    padding-top: 56px;
+}
+
+.footer {
+    display: flex;
+    padding: 0 40px 40px 40px;
+
+    @media (max-width: $breakpoint992) {
+        flex-wrap: wrap-reverse;
+        padding: 0;
+        padding-bottom: 20px;
+    }
+
+    &__item {
+        display: flex;
+        gap: 80px;
+
+        @media (max-width: $breakpoint992) {
+            justify-content: center;
+            gap: 100px;
+        }
+        @media (max-width: $breakpoint480) {
+            justify-content: flex-start;
+            
+        }
+
+        @media (max-width: $breakpoint768) {
+            gap: 50px;
+        }
+
+        &:first-child {
+            margin-left: 136px;
+
+            @media (max-width: $breakpoint1200) {
+                margin-left: 0;
+            }
+
+            @media (max-width: $breakpoint992) {
+                flex: 0 1 100%;
+                margin-top: 70px;
+            }
+
+            @media (max-width: $breakpoint480) {
+                flex-wrap: wrap;
+                margin-top: 24px;
+                gap: 24px;
+            }
+        }
+
+        &:last-child {
+            margin-left: auto;
+            max-width: 377px;
+
+            @media (max-width: $breakpoint992) {
+                flex: 0 1 100%;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    &__list {}
+
+    &__title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 32px;
+        color: #FFFFFF;
+    }
+
+    &__list-item {
+        margin-top: 24px;
+    }
+
+    &__link {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #FFFFFF;
+        opacity: 0.8;
+
+        &:hover {
+            opacity: 1;
+            transition: .3s ease;
+        }
+    }
+
+    &__text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: #FFFFFF;
+        opacity: 0.8;
+        margin-top: 24px;
+    }
+
+    &__form {}
+
+    &__form-label {
+        display: flex;
+        margin-top: 8px;
+        gap: 8px;
+
+        @media (max-width: $breakpoint768) {
+            flex-wrap: wrap;
+            width: 100%;
+            flex: 0 1 100%;
+        }
+    }
+
+    &__form-input {
+        flex: 0 1 270px;
+        background: #fff;
+        border-radius: 8px;
+        padding: 10px 12px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.01em;
+        color: $primary;
+        outline: none;
+
+        &:focus {
+            outline: 2px solid $secondary;
+        }
+
+        &::placeholder {
+            color: #CCCCCC;
+        }
+
+        @media (max-width: $breakpoint480) {
+            width: 100%;
+            flex: 0 1 100%;
+        }
+
+    }
+
+    &__form-btn {
+        width: 99px;
+        padding: 10px 0;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.01em;
+        color: #FFFFFF;
+        font-style: normal;
+        background: $secondary;
+        border-radius: 8px;
+
+        &:hover {
+            background: $secondaryHover;
+            transition: .3s ease;
+        }
+        @media (max-width: $breakpoint480) {
+            width: 100%;
+            flex: 0 1 100%;
+        }
+    }
+}
+
+.footer__bottom {
+    background: $primary;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    padding-top: 26px;
+
+    @media (max-width: $breakpoint480) {
+        gap: 30px;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+
+    &-item {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #FFFFFF;
+        opacity: 0.7;
+    }
+
+    .footer__bottom-list {
+        display: flex;
+        gap: 28px;
+    }
 }
